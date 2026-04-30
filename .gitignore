@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Local thesis materials kept out of the remote repository
+_local_archive/
+docs/*.pdf
+docs/BEHACOM_Analysis_Complete_Archive.md
+data/BEHACOM/Behacom/
