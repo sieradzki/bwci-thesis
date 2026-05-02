@@ -6,20 +6,25 @@ This repository supports a master's thesis titled:
 
 **Behavioral Work Continuity Index: Development of a Measure and Comparison of Machine Learning Models**
 
-The thesis develops and evaluates the Behavioral Work Continuity Index (**BWCI**): a proxy measure of work continuity based on behavioral telemetry from computer usage.
+The thesis develops and evaluates the Behavioral Work Continuity Index (**BWCI**):
+a proxy measure of work continuity based on behavioral telemetry from computer usage.
 
-The main dataset is **BEHACOM**, stored locally under `data/BEHACOM/Behacom`. It contains one-minute aggregated telemetry for keyboard activity, mouse activity, application usage, and basic system metrics.
+The main dataset is **BEHACOM**, stored locally under `data/BEHACOM/Behacom`.
+It contains one-minute aggregated telemetry for keyboard activity, mouse activity,
+application usage, and basic system metrics.
 
 ## Methodological Ground Rules
 
-- The thesis is about **behavioral work continuity** and **risk of work interruption**, not direct measurement of focus, attention, concentration, productivity, or mental state.
+- The thesis is about **behavioral work continuity** and **risk of work interruption**,
+  not direct measurement of focus, attention, concentration, productivity, or mental state.
 - BEHACOM has no ground-truth labels for `focused / distracted`; any target variable must be treated as a **proxy**.
 - Avoid claims that BWCI measures psychological focus. Use wording such as:
   - behavioral continuity,
   - work continuity,
   - work disruption risk,
   - observable behavioral proxy.
-- The main methodological risk is circularity: do not present prediction of BWCI from the same contemporaneous features used to construct BWCI as strong evidence. Prefer future prediction, temporal separation, baselines, and sensitivity analysis.
+- The main methodological risk is circularity: do not present prediction of BWCI from the same contemporaneous features
+  used to construct BWCI as strong evidence. Prefer future prediction, temporal separation, baselines, and sensitivity analysis.
 - External validation on own data is planned as a later strengthening step, not part of the initial BEHACOM audit.
 
 ## Current Working Decisions
@@ -40,6 +45,30 @@ The main dataset is **BEHACOM**, stored locally under `data/BEHACOM/Behacom`. It
 - Keep local BEHACOM data under `data/`; this is ignored by Git.
 - Do not commit unless the user explicitly asks for a commit.
 
+## Code Style
+
+- Use **two spaces** for Python indentation, not four.
+- Keep `max-line-length=150`; `.pylintrc` is the source of truth for lint settings.
+- Always use type hints for functions and variables where they improve clarity.
+- All or almost all functions should have English docstrings.
+- Preferred docstring style includes spaces immediately after opening triple quotes and before closing triple quotes:
+
+```python
+def get_active_window_name() -> str:
+  """ Get the name of the active window.
+
+    Returns:
+      str: The name of the active window.
+
+    Raises:
+      NotImplementedError: If the platform is not supported.
+  """
+```
+
+- Short enum/class/module docstrings may be one line, e.g. `""" Enum for project statuses. """`.
+- Comments and docstrings should be written in English.
+- Notebooks should follow the same code style in code cells where practical.
+
 ## Data Handling Notes
 
 Known BEHACOM facts from initial inspection:
@@ -52,7 +81,8 @@ Known BEHACOM facts from initial inspection:
 - After excluding User 2, the expected row count is 166,879.
 - Digraph columns dominate the schema and should not be loaded casually during early EDA.
 
-Practical implication: avoid full CSV loads unless there is a specific reason. Prefer selective column loading for early analysis.
+Practical implication: avoid full CSV loads unless there is a specific reason.
+Prefer selective column loading for early analysis.
 
 ## Preferred Work Rhythm
 
@@ -76,11 +106,15 @@ For exploratory data analysis:
 Use these skills when the task matches their scope:
 
 - `codebase-onboarding`: when orienting a new agent to the repo structure or updating contributor-facing project notes.
-- `senior-data-engineer`: when designing or implementing data loading, audit, ETL, validation, storage layout, or performance-sensitive processing.
-- `senior-data-scientist`: when defining BWCI, constructing labels, engineering features, comparing ML models, designing validation, and interpreting model results.
-- `statistical-analyst`: when analyzing sensitivity, stability, correlations, statistical tests, confidence intervals, or validation against external/self-report data.
+- `senior-data-engineer`: when designing or implementing data loading, audit, ETL, validation, storage layout,
+  or performance-sensitive processing.
+- `senior-data-scientist`: when defining BWCI, constructing labels, engineering features, comparing ML models,
+  designing validation, and interpreting model results.
+- `statistical-analyst`: when analyzing sensitivity, stability, correlations, statistical tests, confidence intervals,
+  or validation against external/self-report data.
 - `senior-qa` or `tdd-guide`: later, when stable pipeline functions need tests.
-- `documents`, `presentations`, or `spreadsheets`: later, only if the user asks to create or edit thesis documents, defense slides, or spreadsheet summaries.
+- `documents`, `presentations`, or `spreadsheets`: later, only if the user asks to create or edit thesis documents,
+  defense slides, or spreadsheet summaries.
 
 Do not use skills just to add ceremony. Use them when they materially improve the current step.
 

@@ -2,7 +2,8 @@
 
 Behavioral Work Continuity Index: Development of a Measure and Comparison of Machine Learning Models
 
-This repository contains materials and code for a master's thesis on the Behavioral Work Continuity Index (BWCI): a proxy measure of work continuity based on behavioral telemetry from computer usage.
+This repository contains materials and code for a master's thesis on the Behavioral Work Continuity Index (BWCI):
+a proxy measure of work continuity based on behavioral telemetry from computer usage.
 
 The project uses the BEHACOM dataset as the main source of keyboard, mouse, application usage, and system telemetry aggregated in one-minute windows.
 
@@ -21,6 +22,12 @@ Quick import check:
 
 ```bash
 python -c "import pandas, numpy, sklearn"
+```
+
+Run pylint on package code:
+
+```bash
+pylint src
 ```
 
 ## Data

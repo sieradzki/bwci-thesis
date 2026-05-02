@@ -1,1 +1,1 @@
-"""Behavioral Work Continuity Index research package."""
+""" Behavioral Work Continuity Index research package. """
