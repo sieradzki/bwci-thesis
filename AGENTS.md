@@ -99,6 +99,11 @@ For exploratory data analysis:
 - Use notebooks for the primary narrative.
 - Include markdown cells explaining intent, methodological assumptions, and findings.
 - Keep notebook outputs focused: tables, small summaries, and plots that directly support decisions.
+- After each important table, chart, or diagnostic result, add a short interpretation in markdown:
+  what the result means, whether it supports or changes assumptions, and what decision follows.
+- Do not leave diagnostic tables unexplained. If a table is shown, explain why it matters.
+- Avoid static "next step" sections that ignore the results above. Next steps must be updated based on findings in the notebook.
+- If a planned check becomes unnecessary because earlier results rule it out, state that explicitly instead of executing it mechanically.
 - When notebook logic stabilizes, consider extracting reusable parts into `src/bwci/`.
 
 ## Useful Skills
