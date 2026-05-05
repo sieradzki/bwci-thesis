@@ -68,6 +68,7 @@ def get_active_window_name() -> str:
 - Short enum/class/module docstrings may be one line, e.g. `""" Enum for project statuses. """`.
 - Comments and docstrings should be written in English.
 - Notebooks should follow the same code style in code cells where practical.
+- Do not use em dash punctuation in markdown or narrative text; use commas, colons, semicolons, parentheses, or a regular hyphen instead.
 
 ## Data Handling Notes
 
