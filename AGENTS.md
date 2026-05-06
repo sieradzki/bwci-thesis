@@ -102,6 +102,9 @@ For exploratory data analysis:
 - Keep notebook outputs focused: tables, small summaries, and plots that directly support decisions.
 - After each important table, chart, or diagnostic result, add a short interpretation in markdown:
   what the result means, whether it supports or changes assumptions, and what decision follows.
+- Interpretations must answer the actual observed result, using concrete numbers or named outcomes from the table/plot.
+  Avoid leaving only generic guidance such as "if this happens" or "this should be interpreted as".
+- If a section introduces decision questions, answer them in the same notebook after the results are shown.
 - Do not leave diagnostic tables unexplained. If a table is shown, explain why it matters.
 - Avoid static "next step" sections that ignore the results above. Next steps must be updated based on findings in the notebook.
 - If a planned check becomes unnecessary because earlier results rule it out, state that explicitly instead of executing it mechanically.
